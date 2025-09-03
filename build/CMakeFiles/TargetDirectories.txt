@@ -1,0 +1,2 @@
+/Users/ale/Documents/Programming/Intro JUCE Plugin/build/CMakeFiles/edit_cache.dir
+/Users/ale/Documents/Programming/Intro JUCE Plugin/build/CMakeFiles/rebuild_cache.dir
