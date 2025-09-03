@@ -63,20 +63,100 @@ CMAKE_BINARY_DIR = "/Users/ale/Documents/Programming/Intro JUCE Plugin/build"
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all:
+all: _deps/juce-build/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen:
+codegen: _deps/juce-build/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: _deps/juce-build/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean:
+clean: _deps/juce-build/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory _deps/juce-build
+
+# Recursive "all" directory target.
+_deps/juce-build/all: _deps/juce-build/modules/all
+_deps/juce-build/all: _deps/juce-build/extras/Build/all
+.PHONY : _deps/juce-build/all
+
+# Recursive "codegen" directory target.
+_deps/juce-build/codegen: _deps/juce-build/modules/codegen
+_deps/juce-build/codegen: _deps/juce-build/extras/Build/codegen
+.PHONY : _deps/juce-build/codegen
+
+# Recursive "preinstall" directory target.
+_deps/juce-build/preinstall: _deps/juce-build/modules/preinstall
+_deps/juce-build/preinstall: _deps/juce-build/extras/Build/preinstall
+.PHONY : _deps/juce-build/preinstall
+
+# Recursive "clean" directory target.
+_deps/juce-build/clean: _deps/juce-build/modules/clean
+_deps/juce-build/clean: _deps/juce-build/extras/Build/clean
+.PHONY : _deps/juce-build/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/juce-build/extras/Build
+
+# Recursive "all" directory target.
+_deps/juce-build/extras/Build/all: _deps/juce-build/extras/Build/juceaide/all
+.PHONY : _deps/juce-build/extras/Build/all
+
+# Recursive "codegen" directory target.
+_deps/juce-build/extras/Build/codegen: _deps/juce-build/extras/Build/juceaide/codegen
+.PHONY : _deps/juce-build/extras/Build/codegen
+
+# Recursive "preinstall" directory target.
+_deps/juce-build/extras/Build/preinstall: _deps/juce-build/extras/Build/juceaide/preinstall
+.PHONY : _deps/juce-build/extras/Build/preinstall
+
+# Recursive "clean" directory target.
+_deps/juce-build/extras/Build/clean: _deps/juce-build/extras/Build/juceaide/clean
+.PHONY : _deps/juce-build/extras/Build/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/juce-build/extras/Build/juceaide
+
+# Recursive "all" directory target.
+_deps/juce-build/extras/Build/juceaide/all:
+.PHONY : _deps/juce-build/extras/Build/juceaide/all
+
+# Recursive "codegen" directory target.
+_deps/juce-build/extras/Build/juceaide/codegen:
+.PHONY : _deps/juce-build/extras/Build/juceaide/codegen
+
+# Recursive "preinstall" directory target.
+_deps/juce-build/extras/Build/juceaide/preinstall:
+.PHONY : _deps/juce-build/extras/Build/juceaide/preinstall
+
+# Recursive "clean" directory target.
+_deps/juce-build/extras/Build/juceaide/clean:
+.PHONY : _deps/juce-build/extras/Build/juceaide/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/juce-build/modules
+
+# Recursive "all" directory target.
+_deps/juce-build/modules/all:
+.PHONY : _deps/juce-build/modules/all
+
+# Recursive "codegen" directory target.
+_deps/juce-build/modules/codegen:
+.PHONY : _deps/juce-build/modules/codegen
+
+# Recursive "preinstall" directory target.
+_deps/juce-build/modules/preinstall:
+.PHONY : _deps/juce-build/modules/preinstall
+
+# Recursive "clean" directory target.
+_deps/juce-build/modules/clean:
+.PHONY : _deps/juce-build/modules/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
@@ -85,6 +165,7 @@ clean:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P "/Users/ale/Documents/Programming/Intro JUCE Plugin/build/CMakeFiles/VerifyGlobs.cmake"
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

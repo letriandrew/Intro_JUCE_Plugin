@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/ale/Documents/Programming/Intro JUCE Plugin/build/_deps/juce-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

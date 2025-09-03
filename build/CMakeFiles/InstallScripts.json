@@ -1,7 +1,11 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/ale/Documents/Programming/Intro JUCE Plugin/build/cmake_install.cmake"
+		"/Users/ale/Documents/Programming/Intro JUCE Plugin/build/cmake_install.cmake",
+		"/Users/ale/Documents/Programming/Intro JUCE Plugin/build/_deps/juce-build/cmake_install.cmake",
+		"/Users/ale/Documents/Programming/Intro JUCE Plugin/build/_deps/juce-build/modules/cmake_install.cmake",
+		"/Users/ale/Documents/Programming/Intro JUCE Plugin/build/_deps/juce-build/extras/Build/cmake_install.cmake",
+		"/Users/ale/Documents/Programming/Intro JUCE Plugin/build/_deps/juce-build/extras/Build/juceaide/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
